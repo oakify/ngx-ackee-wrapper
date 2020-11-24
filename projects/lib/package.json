@@ -3,10 +3,10 @@
   "description": "Angular wrapper library for Ackee",
   "version": "0.0.1",
   "license": "MIT",
-  "author": "BoomDev",
+  "author": "Oakify",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BoomDev/ngx-ackee-wrapper.git"
+    "url": "git+https://github.com/oakify/ngx-ackee-wrapper.git"
   },
   "keywords": [
     "angular",
@@ -15,9 +15,9 @@
     "wrapper"
   ],
   "bugs": {
-    "url": "https://github.com/BoomDev/ngx-ackee-wrapper/issues"
+    "url": "https://github.com/oakify/ngx-ackee-wrapper/issues"
   },
-  "homepage": "https://github.com/BoomDev/ngx-ackee-wrapper#readme",
+  "homepage": "https://github.com/oakify/ngx-ackee-wrapper#readme",
   "peerDependencies": {
     "@angular/common": "^10.1.6",
     "@angular/core": "^10.1.6"

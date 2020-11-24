@@ -3,7 +3,7 @@
   "description": "Angular wrapper library for Ackee",
   "version": "0.0.1",
   "license": "MIT",
-  "author": "BoomDev",
+  "author": "Oakify",
   "scripts": {
     "ng": "ng",
     "start": "ng serve app",
