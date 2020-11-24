@@ -4,12 +4,20 @@
   "version": "0.0.1",
   "license": "MIT",
   "author": "BoomDev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BoomDev/ngx-ackee-wrapper.git"
+  },
   "keywords": [
     "angular",
     "library",
     "ackee",
     "wrapper"
   ],
+  "bugs": {
+    "url": "https://github.com/BoomDev/ngx-ackee-wrapper/issues"
+  },
+  "homepage": "https://github.com/BoomDev/ngx-ackee-wrapper#readme",
   "peerDependencies": {
     "@angular/common": "^10.1.6",
     "@angular/core": "^10.1.6"
