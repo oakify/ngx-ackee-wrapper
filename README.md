@@ -18,7 +18,7 @@ $ npm install ngx-ackee-wrapper
 $ yarn add ngx-ackee-wrapper
 ```
 
-### II. Update your AppModule
+## II. Update your AppModule
 
 ```typescript
 import { BrowserModule } from "@angular/platform-browser";
@@ -50,15 +50,15 @@ const ACKEE_CONFIG: AckeeOptions = {
 export class AppModule {}
 ```
 
-### III. Options
+## III. Options
 
 - **tracker:** The url to your instance's tracker (you could have a custom name) - it is recommended by Ackee's developer to use the tracker from your instance instead of the package ackee-tracker. See [here](https://github.com/electerious/ackee-tracker#-installation).
 
 - **server, domainId & options:** same as ackee-tracker, see their [docs](https://github.com/electerious/ackee-tracker#createserver-opts).
 
-- **dev:** optional, usefull if you want to see check tracking from your console when using `ignoreLocalhost: false`
+- **dev:** optional, useful if you want to see check tracking from your console when using `ignoreLocalhost: false`
 
-### IV. TRACK
+## IV. TRACK
 
 ```typescript
 import { Component } from "@angular/core";
@@ -85,4 +85,4 @@ export class AppComponent {
 ```
 
 To track route changes, we get the router's events (an `Observable<Event>`) and we filter them to get only NavigationEnd types of events. If you want you can use NavigationStart instead.
-I personally prefer NavigationEnd so that we track only page that have effectively loaded.
+I personally prefer NavigationEnd so that we track only pages that have effectively loaded.
