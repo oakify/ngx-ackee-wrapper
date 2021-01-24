@@ -1,12 +1,12 @@
 {
   "name": "ngx-ackee-wrapper",
   "description": "Angular wrapper library for Ackee",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "Oakify",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oakify/ngx-ackee-wrapper.git"
+    "url": "https://github.com/oakify/ngx-ackee-wrapper.git"
   },
   "keywords": [
     "angular",

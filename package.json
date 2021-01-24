@@ -14,10 +14,13 @@
     "e2e": "ng e2e"
   },
   "private": true,
-  "homepage": "https://github.com/oakify/ngx-ackee-wrapper",
+  "homepage": "https://github.com/oakify/ngx-ackee-wrapper#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/oakify/ngx-ackee-wrapper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oakify/ngx-ackee-wrapper/issues"
   },
   "dependencies": {
     "@angular/animations": "~10.1.4",
