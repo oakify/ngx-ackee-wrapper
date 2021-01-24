@@ -5,16 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CompaComponent } from './compa/compa.component';
 import { CompbComponent } from './compb/compb.component';
+import { environment } from '../environments/environment';
 
-import { AckeeModule, AckeeOptions } from 'projects/lib/src/public-api';
+import { AckeeModule, AckeeConfig } from 'projects/lib/src/public-api';
 // import { AckeeModule, AckeeOptions } from 'ngx-ackee-wrapper';
 
-const ACKEE_CONFIG: AckeeOptions = {
-  tracker: 'https://example.com/tracker.js',
-  server: 'https://example.com',
-  domainId: '12312311-1234-1234-1234-123412341234',
+const ACKEE_CONFIG: AckeeConfig = {
+  tracker: environment.ackeeUrl + '/tracker.js',
+  server: environment.ackeeUrl,
+  domainId: environment.ackeeDomainId,
   options: {
-    // ignoreLocalhost: true,
+    ignoreLocalhost: false,
     detailed: true,
     // ignoreOwnVisits: true,
   },

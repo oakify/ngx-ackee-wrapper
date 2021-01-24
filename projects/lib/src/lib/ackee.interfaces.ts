@@ -4,7 +4,7 @@ declare global {
   }
 }
 
-export class AckeeOptions {
+export class AckeeConfig {
   tracker: string;
   server: string;
   domainId: string;
@@ -18,14 +18,37 @@ export class AckeeOptions {
 
 export interface AckeeTracker {
   create: (
-    serv: { server: string; domainId: string },
+    server: string,
     opts?: {
       ignoreLocalhost?: boolean;
       detailed?: boolean;
     }
-  ) => AckeeObject;
+  ) => AckeeInstance;
 }
 
-export interface AckeeObject {
-  record: Function;
+export interface AckeeInstance {
+  record: (
+    domainId: string,
+    attributes?: AckeeAttributesObject
+  ) => AckeeRecorder;
+  action: (
+    eventId: string,
+    attributes: AckeeActionAttributes,
+    callback?: (actionId: string) => void
+  ) => void;
+  updateAction: (actionId: string, attributes: AckeeActionAttributes) => void;
+}
+
+export interface AckeeRecorder {
+  stop: Function;
+}
+
+export interface AckeeAttributesObject {
+  siteLocation?: string;
+  siteReferrer?: string;
+}
+
+export interface AckeeActionAttributes {
+  key: string;
+  value?: number;
 }

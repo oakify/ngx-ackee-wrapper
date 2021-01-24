@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { AckeeOptions } from './ackee.interfaces';
+import { AckeeConfig } from './ackee.interfaces';
 
 @NgModule({
   declarations: [],
@@ -8,13 +8,13 @@ import { AckeeOptions } from './ackee.interfaces';
 })
 export class AckeeModule {
   static forRoot(
-    libConfiguration: AckeeOptions
+    libConfiguration: AckeeConfig
   ): ModuleWithProviders<AckeeModule> {
     return {
       ngModule: AckeeModule,
       providers: [
         {
-          provide: AckeeOptions,
+          provide: AckeeConfig,
           useValue: libConfiguration,
         },
       ],

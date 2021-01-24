@@ -6,6 +6,8 @@
     <a routerLink="/a" routerLinkActive="active">Child A</a>
     <a routerLink="/b" routerLinkActive="active">Child B</a>
   </nav>
+  <button (click)="triggerAction()">Click for Event</button>
+  <button (click)="triggerActionUpdate()">Click for Event Update</button>
 </div>
 
 <router-outlet></router-outlet>
