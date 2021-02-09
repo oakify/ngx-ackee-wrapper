@@ -1,7 +1,7 @@
 {
   "name": "ngx-ackee-wrapper",
   "description": "Angular wrapper library for Ackee",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "Oakify",
   "repository": {
@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/oakify/ngx-ackee-wrapper#readme",
   "peerDependencies": {
-    "@angular/common": "^10.1.6",
-    "@angular/core": "^10.1.6"
+    "@angular/common": "~11.1.2",
+    "@angular/core": "~11.1.2"
   },
   "dependencies": {
     "tslib": "^2.0.0"

@@ -4,7 +4,7 @@ This is an Angular wrapper library for [ackee-tracker](https://github.com/electe
 
 _This version is now (ONLY) compatible with Ackee v3, including event tracking! See [Release Notes for v3](https://github.com/electerious/Ackee/releases/tag/v3.0.0)_
 
-> 🚨 BREAKING CHANGES: the `.create()` method was renamed to `.visit()` for better naming consistency with `.event()` - one tracks a **_visit_** and the other an **_event_**. Both **_create_** the instance if it does not exist. Also, the interface `AckeeOptions` has been renamed `AckeeConfig`
+> 🚨 BREAKING CHANGES: the `.create()` method was renamed to `.visit()` for better naming consistency with `.event()` - one tracks a **_visit_** and the other an **_event_**. Both **_create_** the instance if it does not exist. Also, the interface `AckeeOptions` has been renamed `AckeeConfig`.
 
 Please make sure you read Ackee's [docs](https://docs.ackee.electerious.com/) before you use this lib.
 
@@ -47,6 +47,7 @@ const ACKEE_CONFIG: AckeeOptions = {
     // ignoreOwnVisits: true,
   },
   dev: true,
+  ignore: false,
 };
 
 @NgModule({
@@ -60,11 +61,12 @@ export class AppModule {}
 
 Configuration:
 
-- **tracker:** The full url to your instance's tracker (you can configure a custom name other than tracker.js). See [here](https://github.com/electerious/ackee-tracker#-installation).
+- **tracker: (string)** The full url to your instance's tracker (you can configure a custom name other than tracker.js). See [here](https://github.com/electerious/ackee-tracker#-installation).
 
-- **server, domainId & options:** same as in ackee-tracker, see the [docs](https://github.com/electerious/ackee-tracker#createserver-opts).
+- **server (string), domainId (string) & options (object):** same as in ackee-tracker, see the [docs](https://github.com/electerious/ackee-tracker#createserver-opts).
 
-- **dev:** optional, will add a message to console log - just a check to see if it runs
+- **dev (boolean):** optional, will add a message to console log - just a check to see if it runs
+- **ignore (boolean):** optional, will completely ignore Ackee: useful in dev when you don't want to run a local instance (or point to the prod) while working on something else - using environment variables for this is recommended (see demo app)
 
 > Note: You can also use environment variables as demonstrated in the demo app.
 
