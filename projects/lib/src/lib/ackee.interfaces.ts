@@ -14,6 +14,7 @@ export class AckeeConfig {
     ignoreOwnVisits?: boolean;
   };
   dev?: boolean;
+  ignore?: boolean;
 }
 
 export interface AckeeTracker {

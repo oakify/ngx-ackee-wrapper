@@ -20,6 +20,7 @@ const ACKEE_CONFIG: AckeeConfig = {
     // ignoreOwnVisits: true,
   },
   dev: true,
+  ignore: !environment.production,
 };
 
 @NgModule({

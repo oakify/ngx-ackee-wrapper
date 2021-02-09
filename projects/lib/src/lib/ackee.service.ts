@@ -22,6 +22,7 @@ export class AckeeService {
   }
 
   public async visit(obs?: Observable<any>) {
+    if (this.ackeeConfig.ignore) return;
     await this.load();
     this.track();
     if (obs) {
@@ -36,6 +37,7 @@ export class AckeeService {
     attributes: AckeeActionAttributes,
     callback?: (actionId: string) => void
   ): Promise<void> {
+    if (this.ackeeConfig.ignore) return;
     await this.load();
     this.ackeeInstance.action(eventId, attributes, callback);
   }
