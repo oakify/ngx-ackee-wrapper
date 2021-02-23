@@ -1,7 +1,7 @@
 {
   "name": "ngx-ackee-wrapper",
   "description": "Angular wrapper library for Ackee",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "author": "Oakify",
   "scripts": {
@@ -23,22 +23,22 @@
     "url": "https://github.com/oakify/ngx-ackee-wrapper/issues"
   },
   "dependencies": {
-    "@angular/animations": "~11.1.2",
-    "@angular/common": "~11.1.2",
-    "@angular/compiler": "~11.1.2",
-    "@angular/core": "~11.1.2",
-    "@angular/forms": "~11.1.2",
-    "@angular/platform-browser": "~11.1.2",
-    "@angular/platform-browser-dynamic": "~11.1.2",
-    "@angular/router": "~11.1.2",
+    "@angular/animations": "~11.2.1",
+    "@angular/common": "~11.2.1",
+    "@angular/compiler": "~11.2.1",
+    "@angular/core": "~11.2.1",
+    "@angular/forms": "~11.2.1",
+    "@angular/platform-browser": "~11.2.1",
+    "@angular/platform-browser-dynamic": "~11.2.1",
+    "@angular/router": "~11.2.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1101.4",
-    "@angular/cli": "~11.1.4",
-    "@angular/compiler-cli": "~11.1.2",
+    "@angular-devkit/build-angular": "~0.1102.1",
+    "@angular/cli": "~11.2.1",
+    "@angular/compiler-cli": "~11.2.1",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
