@@ -28,7 +28,7 @@ export class AckeeService {
     await this.load();
 
     if (!attributes)
-      attributes = window.ackeeTracker.attributes(this.ackeeConfig.options.detailed ?? false);
+      attributes = this.ackeeAttributes;
 
     this.track(attributes);
     if (obs) {
