@@ -17,6 +17,14 @@ export class AppComponent {
     this.ackeeServ.visit(
       this.router.events.pipe(filter((evt) => evt instanceof NavigationEnd))
     );
+
+    // Track route changes & override attributes:
+    this.ackeeServ.visit(
+      this.router.events.pipe(filter((evt) => evt instanceof NavigationEnd)), {
+        siteLocation: window.location.href,
+        siteReferrer: document.referrer
+      }
+    );
   }
   triggerAction() {
     this.ackeeServ.event(

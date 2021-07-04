@@ -48,6 +48,19 @@ export interface AckeeRecorder {
 export interface AckeeAttributesObject {
   siteLocation?: string;
   siteReferrer?: string;
+  source?: string;
+  siteLanguage?: string;
+  screenWidth?: number;
+  screenHeight?: number;
+  screenColorDepth?: number;
+  deviceName?: string;
+  deviceManufacturer?: string;
+  osName?: string;
+  osVersion?: string;
+  browserName?: string;
+  browserVersion?: string;
+  browserWidth?: number;
+  browserHeight?: number;
 }
 
 export interface AckeeActionAttributes {

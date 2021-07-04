@@ -72,7 +72,7 @@ Configuration:
 
 ## 2. Using the Library 🚀
 
-### 2.1. Track visits
+### 2.1. Track visits: `.visit()`
 
 In your Component:
 
@@ -96,9 +96,24 @@ export class AppComponent {
     this.ackeeServ.visit(
       this.router.events.pipe(filter((evt) => evt instanceof NavigationEnd))
     );
+
+    // Track route changes & override attributes:
+    // this.ackeeServ.visit(
+    //   this.router.events.pipe(filter((evt) => evt instanceof NavigationEnd)), {
+    //     siteLocation: window.location.href,
+    //     siteReferrer: document.referrer
+    //   }
+    // );
   }
 }
 ```
+
+Parameters:
+
+- `obs` `(Observable<Event>)`: to track changes, see below;
+- `attributes` `(AckeeAttributesObject)`: Overrides the user-related information transferred to the server.
+
+🚨 If you pass attributes here, only that information will be sent to the server, use with caution 🚨;
 
 To track route changes, we get the router's events (an `Observable<Event>`) and we filter them to get only the events of type NavigationEnd. If you want, you can use NavigationStart instead. In fact you can pass any Observable you want to get fancy with the tracking. I personally prefer NavigationEnd so that I only track the pages that have effectively loaded.
 
@@ -141,7 +156,7 @@ Parameters:
 - `attributes` `({key:string; value:number})`: record whatever you want;
 - `callback` (optional): will receive the `actionId (string)` that lets you update your event later, if required.
 
-### 2.2. Update events `.eventUpdate()`
+### 2.2. Update events: `.eventUpdate()`
 
 You can change the attibutes of any past event as long as you have its `actionId` that you get from the callback in `.event()`.
 
