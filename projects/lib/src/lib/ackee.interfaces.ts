@@ -25,6 +25,7 @@ export interface AckeeTracker {
       detailed?: boolean;
     }
   ) => AckeeInstance;
+  attributes: (detailed: boolean) => AckeeAttributesObject;
 }
 
 export interface AckeeInstance {
