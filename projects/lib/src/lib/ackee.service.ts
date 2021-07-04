@@ -5,6 +5,7 @@ import {
   AckeeConfig,
   AckeeInstance,
   AckeeActionAttributes,
+  AckeeAttributesObject
 } from './ackee.interfaces';
 
 @Injectable({
@@ -15,19 +16,24 @@ export class AckeeService {
   private ackeeInstance: AckeeInstance;
   private ackeeRecorder: AckeeRecorder;
   private ackeeConfig: AckeeConfig;
+  private ackeeAttributes: AckeeAttributesObject;
 
   constructor(private config: AckeeConfig) {
     this.ackeeConfig = this.config;
     if (!this.ackeeConfig.options) this.ackeeConfig.options = {};
   }
 
-  public async visit(obs?: Observable<any>) {
+  public async visit(obs?: Observable<any>, attributes?: AckeeAttributesObject) {
     if (this.ackeeConfig.ignore) return;
     await this.load();
-    this.track();
+
+    if (!attributes)
+      attributes = window.ackeeTracker.attributes(this.ackeeConfig.options.detailed ?? false);
+
+    this.track(attributes);
     if (obs) {
       obs.subscribe((_) => {
-        this.track();
+        this.track(attributes);
       });
     }
   }
@@ -78,15 +84,21 @@ export class AckeeService {
         this.ackeeConfig.server,
         this.ackeeConfig.options
       );
+      this.ackeeAttributes = window.ackeeTracker.attributes(this.ackeeConfig.options.detailed ?? false);
       this.loaded = true;
     }
   }
 
-  private track() {
+  public async attributes(): Promise<AckeeAttributesObject> {
+    await this.load();
+    return this.ackeeAttributes;
+  }
+
+  private track(attributes: AckeeAttributesObject) {
     if (this.ackeeConfig.dev) console.log('PAGE TRACKED');
     if (this.ackeeRecorder) {
       this.ackeeRecorder.stop();
     }
-    this.ackeeRecorder = this.ackeeInstance.record(this.ackeeConfig.domainId);
+    this.ackeeRecorder = this.ackeeInstance.record(this.ackeeConfig.domainId, attributes);
   }
 }
