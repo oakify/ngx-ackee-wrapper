@@ -1,7 +1,7 @@
 {
   "name": "ngx-ackee-wrapper",
   "description": "Angular wrapper library for Ackee",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "author": "Oakify",
   "scripts": {
